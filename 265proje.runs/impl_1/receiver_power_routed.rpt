@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Mon Aug  8 22:45:24 2022
-| Host             : BRSCN running 64-bit major release  (build 9200)
+| Date             : Tue Aug  9 18:15:15 2022
+| Host             : tolgaizdas-cs running 64-bit major release  (build 9200)
 | Command          : report_power -file receiver_power_routed.rpt -pb receiver_power_summary_routed.pb -rpx receiver_power_routed.rpx
 | Design           : receiver
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.073        |
+| Total On-Chip Power (W)  | 0.097        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.001        |
+| Dynamic (W)              | 0.025        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.6         |
-| Junction Temperature (C) | 25.4         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |       73 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       17 |     20800 |            0.08 |
-|   CARRY4       |    <0.001 |        4 |      8150 |            0.05 |
-|   Register     |    <0.001 |       43 |     41600 |            0.10 |
-|   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |    <0.001 |       59 |       --- |             --- |
-| I/O            |    <0.001 |       11 |       106 |           10.38 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.003 |     5719 |       --- |             --- |
+|   LUT as Logic |     0.002 |     4242 |     20800 |           20.39 |
+|   CARRY4       |    <0.001 |     1112 |      8150 |           13.64 |
+|   Register     |    <0.001 |      131 |     41600 |            0.31 |
+|   F7/F8 Muxes  |    <0.001 |        2 |     32600 |           <0.01 |
+|   Others       |     0.000 |        7 |       --- |             --- |
+| Signals        |     0.004 |     4510 |       --- |             --- |
+| I/O            |     0.017 |       22 |       106 |           20.75 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.073 |          |           |                 |
+| Total          |     0.097 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.010 |       0.001 |      0.010 |
-| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vccint    |       1.000 |     0.018 |       0.009 |      0.010 |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
+| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -137,8 +138,10 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------+-----------+
-| Name | Power (W) |
-+------+-----------+
++----------+-----------+
+| Name     | Power (W) |
++----------+-----------+
+| receiver |     0.025 |
++----------+-----------+
 
 

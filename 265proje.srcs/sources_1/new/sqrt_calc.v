@@ -22,12 +22,13 @@
 
 module sqrt_calc(
         input [8:0] sayi,
-        output reg [4:0] cikti_tam,
-        output reg [6:0] cikti_ondalik
+        output reg [4:0] cikti
     );
     
     integer i;
     real ara_sonuc, ara_tahmin;
+    reg [4:0] cikti_tam;
+    reg [6:0] cikti_ondalik;
     
     // Newton Method: (N / A + A) / 2
     
@@ -40,6 +41,7 @@ module sqrt_calc(
         cikti_tam = $floor(ara_sonuc);
         cikti_ondalik = $floor((ara_sonuc - cikti_tam) * 100);
         // $display("ara_sonuc: %f", ara_sonuc);
+        cikti = cikti_tam * 100 + cikti_ondalik;
     end
     
     

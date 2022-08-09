@@ -22,7 +22,7 @@
 
 module prime_number_calc(
         input [8:0] sayi,
-        output reg cikti
+        output reg [4:0] cikti
     );
     
     integer i;
