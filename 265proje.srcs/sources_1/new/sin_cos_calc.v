@@ -23,14 +23,15 @@
 module sin_cos_calc(
         input [8:0] sayi,
         input islem, // 1 -> sin, 0 -> cos
-        output reg [4:0] cikti_tam,
-        output reg [6:0] cikti_ondalik,
+        output reg [4:0] cikti,
         output reg cikti_isareti // 1 -> negatif, 0 -> pozitif
     );
     
     // sin(x) = x - x**3/3! + x**5/5! - x**7/7! + x**9/9!
     // cos(x) = 1 - x**2/2! + x**4/4! - x**6/6! + x**8/8!
     
+    reg [4:0] cikti_tam;
+    reg [6:0] cikti_ondalik;
     real temp, radyan, sonuc_tam, sonuc_ondalik;
     
     always @(*) begin
@@ -68,5 +69,7 @@ module sin_cos_calc(
             cikti_isareti = (sayi > 180 && sayi < 360) ? 1 : 0; 
         else
             cikti_isareti = (sayi > 90 && sayi < 270) ? 1 : 0;
+            
+        cikti = cikti_tam*100 + cikti_ondalik;
     end
 endmodule
