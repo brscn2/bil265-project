@@ -31,15 +31,32 @@ module receiver(
     reg [1:0] durum = 2'd0;
     reg [8:0] sayi = 9'd0;
     reg [7:0] islem_kodu;
-    reg [15:0] cikti = 16'd0;
-    wire [15:0] asal, karekok, sin, cos;
     
-    prime_number_calc a(sayi, asal);
-    //sin_cos_calc c(sayi, 0, cos, 0);
-    //sin_cos_calc s(sayi, 0, sin, 0);
-    //sqrt_calc k(sayi, karekok);
+    wire cikti_isareti_asal;
+    wire [4:0] cikti_tam_asal;
+    wire [3:0] cikti_ondalik1_asal, cikti_ondalik2_asal;
     
-    always @(posedge clk) begin
+    wire cikti_isareti_cos;
+    wire [4:0] cikti_tam_cos;
+    wire [3:0] cikti_ondalik1_cos, cikti_ondalik2_cos;
+    
+    wire cikti_isareti_karekok;
+    wire [4:0] cikti_tam_karekok;
+    wire [3:0] cikti_ondalik1_karekok, cikti_ondalik2_karekok;
+    
+    wire cikti_isareti_sin;
+    wire [4:0] cikti_tam_sin;
+    wire [3:0] cikti_ondalik1_sin, cikti_ondalik2_sin;
+    
+    reg [15:0] cikti = 14'd1770;
+    
+    prime_number_calc a(sayi, cikti_isareti_asal, cikti_tam_asal, cikti_ondalik1_asal, cikti_ondalik2_asal);
+    sin_cos_calc c(sayi, 0, cikti_isareti_cos, cikti_tam_cos, cikti_ondalik1_cos, cikti_ondalik2_cos);
+    sin_cos_calc s(sayi, 1, cikti_isareti_sin, cikti_tam_sin, cikti_ondalik1_sin, cikti_ondalik2_sin);
+    sqrt_calc k(sayi, cikti_isareti_karekok, cikti_tam_karekok, cikti_ondalik1_karekok, cikti_ondalik2_karekok);
+    
+    
+    always @(RxData) begin
         if (durum == 2'b00) begin
             if(RxData <= 8'd57 && RxData >= 8'd48) begin
                 sayi = RxData - 6'd48;
@@ -52,26 +69,24 @@ module receiver(
             end else begin
                 // islem kodu alinacak
                 islem_kodu = RxData;
-                durum = 2'b10;
+                case (islem_kodu)
+                    8'd97: begin // a -> asal_sayi
+                        cikti = cikti_tam_asal * 100 + cikti_ondalik1_asal * 10 + cikti_ondalik2_asal;
+                    end
+                    8'd99: begin // c -> cos
+                        cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
+                    end
+                    8'd107: begin // k -> karekok
+                        cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
+                    end
+                    8'd115: begin // s -> sin
+                        cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
+                    end
+                endcase
+                sayi = 9'd0;
+                durum = 2'b00;
             end
-        end else if (durum == 2'b10) begin
-            // sin, cos, asal, karekok yapilacak
-            case (islem_kodu)
-            8'd97: begin // a -> asal_sayi
-                cikti = asal;
-            end
-            8'd99: begin // c -> cos
-                cikti = cos;
-            end
-            8'd107: begin // k -> karekok
-                cikti = karekok;
-            end
-            8'd115: begin // s -> sin
-                cikti = sin;
-            end
-            endcase
-            durum = 2'b00;
-        end   
+        end
     end
     
     // reg [26:0] one_second_counter; // counter for generating 1 second clock enable
@@ -121,25 +136,25 @@ module receiver(
         2'b00: begin
             an = 4'b0111; 
             // activate LED1 and Deactivate LED2, LED3, LED4
-            LED_BCD = cikti / 1000;
+            LED_BCD = (cikti) / 1000;
             // the first digit of the 16-bit number
               end
         2'b01: begin
             an = 4'b1011; 
             // activate LED2 and Deactivate LED1, LED3, LED4
-            LED_BCD = (cikti % 1000) / 100;
+            LED_BCD = ((cikti) % 1000) / 100;
             // the second digit of the 16-bit number
               end
         2'b10: begin
             an = 4'b1101; 
             // activate LED3 and Deactivate LED2, LED1, LED4
-            LED_BCD = ((cikti % 1000)%100)/10;
+            LED_BCD = (((cikti) % 1000)%100)/10;
             // the third digit of the 16-bit number
                 end
         2'b11: begin
             an = 4'b1110; 
             // activate LED4 and Deactivate LED2, LED3, LED1
-            LED_BCD = ((cikti % 1000)%100)%10;
+            LED_BCD = (((cikti) % 1000)%100)%10;
             // the fourth digit of the 16-bit number    
                end
         endcase

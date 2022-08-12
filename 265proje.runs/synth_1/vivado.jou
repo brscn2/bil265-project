@@ -2,11 +2,11 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Aug  9 18:07:42 2022
-# Process ID: 32
-# Current directory: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1
+# Start of session at: Fri Aug 12 20:51:16 2022
+# Process ID: 14072
+# Current directory: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1
 # Command line: vivado.exe -log receiver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source receiver.tcl
-# Log file: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/receiver.vds
-# Journal file: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1\vivado.jou
+# Log file: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/receiver.vds
+# Journal file: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source receiver.tcl -notrace

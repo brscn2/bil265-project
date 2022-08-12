@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Tue Aug  9 18:15:14 2022
-| Host         : tolgaizdas-cs running 64-bit major release  (build 9200)
+| Date         : Fri Aug 12 20:54:03 2022
+| Host         : BRSCN running 64-bit major release  (build 9200)
 | Command      : report_methodology -file receiver_methodology_drc_routed.rpt -pb receiver_methodology_drc_routed.pb -rpx receiver_methodology_drc_routed.rpx
 | Design       : receiver
 | Device       : xc7a35tcpg236-1
@@ -23,19 +23,35 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 22
+             Violations found: 141
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-16 | Warning  | Large setup violation         | 1          |
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 4          |
 | TIMING-18 | Warning  | Missing input or output delay | 21         |
+| TIMING-20 | Warning  | Non-clocked latch             | 116        |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-16#1 Warning
-Large setup violation  
-There is a large setup violation of -10.772 ns between sayi_reg[3]/C (clocked by sys_clk_pin) and cikti_reg[0]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell k/sonuc_ondalik1_reg[0]_i_3__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) k/sonuc_ondalik2_reg[3]/CLR, k/sonuc_ondalik1_reg[0]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell k/sonuc_ondalik1_reg[3]_i_3__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) k/sonuc_ondalik1_reg[1]/CLR, k/sonuc_ondalik1_reg[2]/CLR, k/sonuc_ondalik1_reg[3]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell k/sonuc_ondalik2_reg[1]_i_2__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) k/sonuc_ondalik2_reg[0]/PRE, k/sonuc_ondalik2_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell k/sonuc_ondalik2_reg[2]_i_2__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) k/sonuc_ondalik2_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning
@@ -141,6 +157,586 @@ Related violations: <none>
 TIMING-18#21 Warning
 Missing input or output delay  
 An output delay is missing on seg[6] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch c/sonuc_ondalik1_reg[0] cannot be properly analyzed as its control pin c/sonuc_ondalik1_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch c/sonuc_ondalik1_reg[1] cannot be properly analyzed as its control pin c/sonuc_ondalik1_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch c/sonuc_ondalik1_reg[2] cannot be properly analyzed as its control pin c/sonuc_ondalik1_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch c/sonuc_ondalik1_reg[3] cannot be properly analyzed as its control pin c/sonuc_ondalik1_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch c/sonuc_ondalik2_reg[0] cannot be properly analyzed as its control pin c/sonuc_ondalik2_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch c/sonuc_ondalik2_reg[1] cannot be properly analyzed as its control pin c/sonuc_ondalik2_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch c/sonuc_ondalik2_reg[2] cannot be properly analyzed as its control pin c/sonuc_ondalik2_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch c/sonuc_ondalik2_reg[3] cannot be properly analyzed as its control pin c/sonuc_ondalik2_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch c/sonuc_tam_reg[0] cannot be properly analyzed as its control pin c/sonuc_tam_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch cikti_reg[0] cannot be properly analyzed as its control pin cikti_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch cikti_reg[10] cannot be properly analyzed as its control pin cikti_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch cikti_reg[11] cannot be properly analyzed as its control pin cikti_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch cikti_reg[12] cannot be properly analyzed as its control pin cikti_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch cikti_reg[13] cannot be properly analyzed as its control pin cikti_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch cikti_reg[1] cannot be properly analyzed as its control pin cikti_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch cikti_reg[2] cannot be properly analyzed as its control pin cikti_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch cikti_reg[3] cannot be properly analyzed as its control pin cikti_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch cikti_reg[4] cannot be properly analyzed as its control pin cikti_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch cikti_reg[5] cannot be properly analyzed as its control pin cikti_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch cikti_reg[6] cannot be properly analyzed as its control pin cikti_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch cikti_reg[7] cannot be properly analyzed as its control pin cikti_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch cikti_reg[8] cannot be properly analyzed as its control pin cikti_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch cikti_reg[9] cannot be properly analyzed as its control pin cikti_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch durum_reg[0] cannot be properly analyzed as its control pin durum_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch k/sonuc_ondalik1_reg[0] cannot be properly analyzed as its control pin k/sonuc_ondalik1_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch k/sonuc_ondalik1_reg[1] cannot be properly analyzed as its control pin k/sonuc_ondalik1_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch k/sonuc_ondalik1_reg[2] cannot be properly analyzed as its control pin k/sonuc_ondalik1_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch k/sonuc_ondalik1_reg[3] cannot be properly analyzed as its control pin k/sonuc_ondalik1_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch k/sonuc_ondalik2_reg[0] cannot be properly analyzed as its control pin k/sonuc_ondalik2_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch k/sonuc_ondalik2_reg[1] cannot be properly analyzed as its control pin k/sonuc_ondalik2_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch k/sonuc_ondalik2_reg[2] cannot be properly analyzed as its control pin k/sonuc_ondalik2_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch k/sonuc_ondalik2_reg[3] cannot be properly analyzed as its control pin k/sonuc_ondalik2_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch k/sonuc_tam_reg[0] cannot be properly analyzed as its control pin k/sonuc_tam_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch k/sonuc_tam_reg[1] cannot be properly analyzed as its control pin k/sonuc_tam_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch k/sonuc_tam_reg[2] cannot be properly analyzed as its control pin k/sonuc_tam_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch k/sonuc_tam_reg[3] cannot be properly analyzed as its control pin k/sonuc_tam_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#37 Warning
+Non-clocked latch  
+The latch k/sonuc_tam_reg[4] cannot be properly analyzed as its control pin k/sonuc_tam_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#38 Warning
+Non-clocked latch  
+The latch s/sonuc_ondalik1_reg[0] cannot be properly analyzed as its control pin s/sonuc_ondalik1_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#39 Warning
+Non-clocked latch  
+The latch s/sonuc_ondalik1_reg[1] cannot be properly analyzed as its control pin s/sonuc_ondalik1_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch s/sonuc_ondalik1_reg[2] cannot be properly analyzed as its control pin s/sonuc_ondalik1_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
+Non-clocked latch  
+The latch s/sonuc_ondalik1_reg[3] cannot be properly analyzed as its control pin s/sonuc_ondalik1_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#42 Warning
+Non-clocked latch  
+The latch s/sonuc_ondalik2_reg[0] cannot be properly analyzed as its control pin s/sonuc_ondalik2_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#43 Warning
+Non-clocked latch  
+The latch s/sonuc_ondalik2_reg[1] cannot be properly analyzed as its control pin s/sonuc_ondalik2_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#44 Warning
+Non-clocked latch  
+The latch s/sonuc_ondalik2_reg[2] cannot be properly analyzed as its control pin s/sonuc_ondalik2_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#45 Warning
+Non-clocked latch  
+The latch s/sonuc_ondalik2_reg[3] cannot be properly analyzed as its control pin s/sonuc_ondalik2_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#46 Warning
+Non-clocked latch  
+The latch s/sonuc_tam_reg[0] cannot be properly analyzed as its control pin s/sonuc_tam_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#47 Warning
+Non-clocked latch  
+The latch sayi_reg[0] cannot be properly analyzed as its control pin sayi_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#48 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep cannot be properly analyzed as its control pin sayi_reg[0]_rep/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#49 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__0 cannot be properly analyzed as its control pin sayi_reg[0]_rep__0/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#50 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__1 cannot be properly analyzed as its control pin sayi_reg[0]_rep__1/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#51 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__2 cannot be properly analyzed as its control pin sayi_reg[0]_rep__2/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#52 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__3 cannot be properly analyzed as its control pin sayi_reg[0]_rep__3/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#53 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__4 cannot be properly analyzed as its control pin sayi_reg[0]_rep__4/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#54 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__5 cannot be properly analyzed as its control pin sayi_reg[0]_rep__5/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#55 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__6 cannot be properly analyzed as its control pin sayi_reg[0]_rep__6/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#56 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__7 cannot be properly analyzed as its control pin sayi_reg[0]_rep__7/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#57 Warning
+Non-clocked latch  
+The latch sayi_reg[0]_rep__8 cannot be properly analyzed as its control pin sayi_reg[0]_rep__8/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#58 Warning
+Non-clocked latch  
+The latch sayi_reg[1] cannot be properly analyzed as its control pin sayi_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#59 Warning
+Non-clocked latch  
+The latch sayi_reg[2] cannot be properly analyzed as its control pin sayi_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#60 Warning
+Non-clocked latch  
+The latch sayi_reg[3] cannot be properly analyzed as its control pin sayi_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#61 Warning
+Non-clocked latch  
+The latch sayi_reg[4] cannot be properly analyzed as its control pin sayi_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#62 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep cannot be properly analyzed as its control pin sayi_reg[4]_rep/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#63 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__0 cannot be properly analyzed as its control pin sayi_reg[4]_rep__0/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#64 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__1 cannot be properly analyzed as its control pin sayi_reg[4]_rep__1/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#65 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__2 cannot be properly analyzed as its control pin sayi_reg[4]_rep__2/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#66 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__3 cannot be properly analyzed as its control pin sayi_reg[4]_rep__3/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#67 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__4 cannot be properly analyzed as its control pin sayi_reg[4]_rep__4/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#68 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__5 cannot be properly analyzed as its control pin sayi_reg[4]_rep__5/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#69 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__6 cannot be properly analyzed as its control pin sayi_reg[4]_rep__6/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#70 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__7 cannot be properly analyzed as its control pin sayi_reg[4]_rep__7/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#71 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__8 cannot be properly analyzed as its control pin sayi_reg[4]_rep__8/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#72 Warning
+Non-clocked latch  
+The latch sayi_reg[4]_rep__9 cannot be properly analyzed as its control pin sayi_reg[4]_rep__9/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#73 Warning
+Non-clocked latch  
+The latch sayi_reg[5] cannot be properly analyzed as its control pin sayi_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#74 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep cannot be properly analyzed as its control pin sayi_reg[5]_rep/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#75 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__0 cannot be properly analyzed as its control pin sayi_reg[5]_rep__0/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#76 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__1 cannot be properly analyzed as its control pin sayi_reg[5]_rep__1/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#77 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__2 cannot be properly analyzed as its control pin sayi_reg[5]_rep__2/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#78 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__3 cannot be properly analyzed as its control pin sayi_reg[5]_rep__3/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#79 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__4 cannot be properly analyzed as its control pin sayi_reg[5]_rep__4/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#80 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__5 cannot be properly analyzed as its control pin sayi_reg[5]_rep__5/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#81 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__6 cannot be properly analyzed as its control pin sayi_reg[5]_rep__6/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#82 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__7 cannot be properly analyzed as its control pin sayi_reg[5]_rep__7/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#83 Warning
+Non-clocked latch  
+The latch sayi_reg[5]_rep__8 cannot be properly analyzed as its control pin sayi_reg[5]_rep__8/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#84 Warning
+Non-clocked latch  
+The latch sayi_reg[6] cannot be properly analyzed as its control pin sayi_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#85 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep cannot be properly analyzed as its control pin sayi_reg[6]_rep/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#86 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep__0 cannot be properly analyzed as its control pin sayi_reg[6]_rep__0/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#87 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep__1 cannot be properly analyzed as its control pin sayi_reg[6]_rep__1/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#88 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep__2 cannot be properly analyzed as its control pin sayi_reg[6]_rep__2/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#89 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep__3 cannot be properly analyzed as its control pin sayi_reg[6]_rep__3/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#90 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep__4 cannot be properly analyzed as its control pin sayi_reg[6]_rep__4/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#91 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep__5 cannot be properly analyzed as its control pin sayi_reg[6]_rep__5/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#92 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep__6 cannot be properly analyzed as its control pin sayi_reg[6]_rep__6/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#93 Warning
+Non-clocked latch  
+The latch sayi_reg[6]_rep__7 cannot be properly analyzed as its control pin sayi_reg[6]_rep__7/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#94 Warning
+Non-clocked latch  
+The latch sayi_reg[7] cannot be properly analyzed as its control pin sayi_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#95 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep cannot be properly analyzed as its control pin sayi_reg[7]_rep/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#96 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__0 cannot be properly analyzed as its control pin sayi_reg[7]_rep__0/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#97 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__1 cannot be properly analyzed as its control pin sayi_reg[7]_rep__1/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#98 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__2 cannot be properly analyzed as its control pin sayi_reg[7]_rep__2/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#99 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__3 cannot be properly analyzed as its control pin sayi_reg[7]_rep__3/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#100 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__4 cannot be properly analyzed as its control pin sayi_reg[7]_rep__4/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#101 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__5 cannot be properly analyzed as its control pin sayi_reg[7]_rep__5/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#102 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__6 cannot be properly analyzed as its control pin sayi_reg[7]_rep__6/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#103 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__7 cannot be properly analyzed as its control pin sayi_reg[7]_rep__7/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#104 Warning
+Non-clocked latch  
+The latch sayi_reg[7]_rep__8 cannot be properly analyzed as its control pin sayi_reg[7]_rep__8/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#105 Warning
+Non-clocked latch  
+The latch sayi_reg[8] cannot be properly analyzed as its control pin sayi_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#106 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep cannot be properly analyzed as its control pin sayi_reg[8]_rep/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#107 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__0 cannot be properly analyzed as its control pin sayi_reg[8]_rep__0/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#108 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__1 cannot be properly analyzed as its control pin sayi_reg[8]_rep__1/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#109 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__2 cannot be properly analyzed as its control pin sayi_reg[8]_rep__2/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#110 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__3 cannot be properly analyzed as its control pin sayi_reg[8]_rep__3/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#111 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__4 cannot be properly analyzed as its control pin sayi_reg[8]_rep__4/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#112 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__5 cannot be properly analyzed as its control pin sayi_reg[8]_rep__5/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#113 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__6 cannot be properly analyzed as its control pin sayi_reg[8]_rep__6/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#114 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__7 cannot be properly analyzed as its control pin sayi_reg[8]_rep__7/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#115 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__8 cannot be properly analyzed as its control pin sayi_reg[8]_rep__8/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#116 Warning
+Non-clocked latch  
+The latch sayi_reg[8]_rep__9 cannot be properly analyzed as its control pin sayi_reg[8]_rep__9/G is not reached by a timing clock
 Related violations: <none>
 
 
