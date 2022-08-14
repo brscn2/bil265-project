@@ -2,32 +2,32 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Fri Aug 12 16:46:36 2022
-# Process ID: 14160
-# Current directory: C:/Users/brscn/Desktop/bil265-project
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15560 C:\Users\brscn\Desktop\bil265-project\265proje.xpr
-# Log file: C:/Users/brscn/Desktop/bil265-project/vivado.log
-# Journal file: C:/Users/brscn/Desktop/bil265-project\vivado.jou
+# Start of session at: Sun Aug 14 02:15:38 2022
+# Process ID: 4712
+# Current directory: C:/Users/tolga/Desktop/bil265-project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15340 C:\Users\tolga\Desktop\bil265-project\265proje.xpr
+# Log file: C:/Users/tolga/Desktop/bil265-project/vivado.log
+# Journal file: C:/Users/tolga/Desktop/bil265-project\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/brscn/Desktop/bil265-project/265proje.xpr
+open_project C:/Users/tolga/Desktop/bil265-project/265proje.xpr
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
-open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 760.328 ; gain = 140.293
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 699.699 ; gain = 122.766
 update_compile_order -fileset sources_1
 reset_run synth_1
-launch_runs synth_1 -jobs 8
-[Fri Aug 12 16:52:56 2022] Launched synth_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 8
-[Fri Aug 12 16:53:26 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Fri Aug 12 16:54:20 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+launch_runs synth_1 -jobs 4
+[Sun Aug 14 02:19:46 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Sun Aug 14 02:22:44 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Aug 14 02:24:42 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
 open_hw
 connect_hw_server
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
@@ -41,13 +41,161 @@ INFO: [Labtools 27-2221] Launch Output:
 
 open_hw_target
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
 current_hw_device [get_hw_devices xc7a35t_0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Sun Aug 14 02:29:59 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+close_hw
+launch_runs impl_1 -jobs 4
+[Sun Aug 14 02:33:19 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Aug 14 02:35:24 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Sun Aug 14 02:37:26 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+close_hw
+launch_runs impl_1 -jobs 8
+[Sun Aug 14 02:40:44 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Aug 14 02:42:07 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+update_compile_order -fileset sources_1
+close_hw
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Sun Aug 14 02:45:31 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Sun Aug 14 02:46:21 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Aug 14 02:47:41 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Sun Aug 14 02:50:59 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Sun Aug 14 02:51:39 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Aug 14 02:53:08 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
@@ -55,148 +203,261 @@ INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed wi
 update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs synth_1 -jobs 8
-[Fri Aug 12 16:58:27 2022] Launched synth_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+[Sun Aug 14 02:58:13 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+close_hw
 launch_runs impl_1 -jobs 8
-[Fri Aug 12 17:00:11 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 03:01:25 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Sun Aug 14 03:03:26 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Sun Aug 14 03:06:41 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Fri Aug 12 17:01:23 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Fri Aug 12 17:01:23 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 03:08:58 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Sun Aug 14 03:13:51 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Sun Aug 14 03:14:29 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Aug 14 03:16:01 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Sun Aug 14 03:18:33 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Sun Aug 14 03:24:43 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Aug 14 03:27:24 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 reset_run synth_1
 launch_runs synth_1 -jobs 8
-[Fri Aug 12 17:10:46 2022] Launched synth_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/runme.log
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+[Sun Aug 14 03:36:10 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+close_hw
 launch_runs impl_1 -jobs 8
-[Fri Aug 12 20:12:29 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 03:42:26 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Fri Aug 12 20:13:50 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 03:44:44 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
 reset_run synth_1
 launch_runs synth_1 -jobs 8
-[Fri Aug 12 20:18:42 2022] Launched synth_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 8
-[Fri Aug 12 20:20:44 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Fri Aug 12 20:21:56 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+[Sun Aug 14 03:53:31 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
 reset_run synth_1
 launch_runs synth_1 -jobs 8
-[Fri Aug 12 20:25:00 2022] Launched synth_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+[Sun Aug 14 03:54:59 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
 launch_runs impl_1 -jobs 8
-[Fri Aug 12 20:26:50 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 04:01:29 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Fri Aug 12 20:28:50 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 04:04:21 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
 reset_run synth_1
 launch_runs synth_1 -jobs 8
-[Fri Aug 12 20:32:41 2022] Launched synth_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+[Sun Aug 14 04:09:01 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
 launch_runs impl_1 -jobs 8
-[Fri Aug 12 20:34:36 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 04:15:12 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Fri Aug 12 20:35:46 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-ERROR: [Common 17-69] Command failed:  Run'impl_1' is already running and cannot be relaunched.
+[Sun Aug 14 04:17:47 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
 reset_run synth_1
 launch_runs synth_1 -jobs 8
-[Fri Aug 12 20:51:15 2022] Launched synth_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/runme.log
+[Sun Aug 14 04:21:27 2022] Launched synth_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/runme.log
 launch_runs impl_1 -jobs 8
-[Fri Aug 12 20:53:00 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 04:28:49 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
 launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Fri Aug 12 20:54:13 2022] Launched impl_1...
-Run output will be captured here: C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+[Sun Aug 14 04:31:36 2022] Launched impl_1...
+Run output will be captured here: C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183737484A
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/brscn/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/tolga/Desktop/bil265-project/265proje.runs/impl_1/receiver.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 close_hw
 exit
-INFO: [Common 17-206] Exiting Vivado at Fri Aug 12 20:57:22 2022...
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 14 04:37:34 2022...

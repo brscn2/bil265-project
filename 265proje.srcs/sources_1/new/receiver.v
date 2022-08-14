@@ -29,7 +29,7 @@ module receiver(
     
     assign RxData = rxshiftreg [8:1]; // assign the RxData from the shiftregister
     reg [1:0] durum = 2'd0;
-    reg [8:0] sayi = 9'd0;
+    reg [15:0] sayi = 9'd0;
     reg [7:0] islem_kodu;
     
     wire cikti_isareti_asal;
@@ -55,19 +55,107 @@ module receiver(
     sin_cos_calc s(sayi, 1, cikti_isareti_sin, cikti_tam_sin, cikti_ondalik1_sin, cikti_ondalik2_sin);
     sqrt_calc k(sayi, cikti_isareti_karekok, cikti_tam_karekok, cikti_ondalik1_karekok, cikti_ondalik2_karekok);
     
+    reg [7:0] temp1 = 8'd0;
     
-    always @(RxData) begin
+    always @(posedge clk) begin
+        if (durum == 2'b00) begin // rakam girilmek zorunda
+            if (RxData >= 8'd48 && RxData <= 8'd57) begin
+                sayi = RxData - 8'd48;
+                durum = 2'b01;
+                temp1 = RxData;
+                cikti = sayi;
+            end
+        end else if (durum == 2'b01) begin // rakam veya harf girilebilir
+            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115 && RxData != temp1) begin // harf durumu
+                islem_kodu = RxData;
+                case (islem_kodu)
+                    8'd97: begin // a -> asal_sayi
+                        cikti = cikti_tam_asal * 100 + cikti_ondalik1_asal * 10 + cikti_ondalik2_asal;
+                    end
+                    8'd99: begin // c -> cos
+                        cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
+                    end
+                    8'd107: begin // k -> karekok
+                        cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
+                    end
+                    8'd115: begin // s -> sin
+                        cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
+                    end
+                endcase
+                durum = 2'b00;
+                sayi = 8'd0;
+            end else if (RxData >= 8'd48 && RxData <= 8'd57 && RxData != temp1) begin // rakam durumu
+                sayi = sayi*10 + RxData - 8'd48;
+                durum = 2'b10;
+                temp1 = RxData;
+                cikti = sayi;
+            end
+        end else if (durum == 2'b10) begin // rakam veya harf girilebilir
+            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115 && RxData != temp1) begin // harf durumu
+                islem_kodu = RxData;
+                case (islem_kodu)
+                    8'd97: begin // a -> asal_sayi
+                        cikti = cikti_tam_asal * 100 + cikti_ondalik1_asal * 10 + cikti_ondalik2_asal;
+                    end
+                    8'd99: begin // c -> cos
+                        cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
+                    end
+                    8'd107: begin // k -> karekok
+                        cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
+                    end
+                    8'd115: begin // s -> sin
+                        cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
+                    end
+                endcase
+                durum = 2'b00;
+                sayi = 8'd0;
+            end else if (RxData >= 8'd48 && RxData <= 8'd57 && RxData != temp1) begin // rakam durumu
+                sayi = sayi*10 + RxData - 8'd48;
+                durum = 2'b11;
+                temp1 = RxData;
+                cikti = sayi;
+            end
+        end else if (durum == 2'b11) begin // harf girilmek zorunda
+            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115 && RxData != temp1) begin // harf durumu
+                islem_kodu = RxData;
+                case (islem_kodu)
+                    8'd97: begin // a -> asal_sayi
+                        cikti = cikti_tam_asal * 100 + cikti_ondalik1_asal * 10 + cikti_ondalik2_asal;
+                    end
+                    8'd99: begin // c -> cos
+                        cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
+                    end
+                    8'd107: begin // k -> karekok
+                        cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
+                    end
+                    8'd115: begin // s -> sin
+                        cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
+                    end
+                endcase
+                durum = 2'b00;
+                sayi = 8'd0;
+            end
+        end
+    end
+    
+    
+    
+    /*always @(RxData) begin
         if (durum == 2'b00) begin
             if(RxData <= 8'd57 && RxData >= 8'd48) begin
                 sayi = RxData - 6'd48;
                 durum = 2'b01;
+                temp1 = RxData;
+                cikti = RxData - 6'd48;
             end
         end else if (durum == 2'b01) begin
-            if(RxData <= 8'd57 && RxData >= 8'd48) begin
-                sayi = sayi*10 + RxData - 6'd48;
-                durum = 2'b01;
-            end else begin
-                // islem kodu alinacak
+            if (temp1 != RxData)
+                temp2 = RxData;
+            if (temp2 <= 8'd57 && temp2 >= 8'd48) begin
+                sayi = sayi*10 + temp2 - 6'd48;
+                durum = 2'b10;
+                cikti = cikti*10 + temp2 - 6'd48;
+            end else if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin
                 islem_kodu = RxData;
                 case (islem_kodu)
                     8'd97: begin // a -> asal_sayi
@@ -85,40 +173,48 @@ module receiver(
                 endcase
                 sayi = 9'd0;
                 durum = 2'b00;
+                temp1 = 8'd0;
+                temp2 = 8'd0;
+                temp3 = 8'd0;
+            end
+        end else if (durum == 2'b10) begin
+            if (temp2 != RxData)
+                temp3 = RxData;
+            if(temp3 <= 8'd57 && temp3 >= 8'd48) begin
+                sayi = sayi*10 + temp3 - 6'd48;
+                durum = 2'b10;
+                cikti = cikti*10 + temp3 - 6'd48;
+                temp2 = RxData;
+                temp3 = 8'd0;
+            end else if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin
+                islem_kodu = RxData;
+                case (islem_kodu)
+                    8'd97: begin // a -> asal_sayi
+                        cikti = cikti_tam_asal * 100 + cikti_ondalik1_asal * 10 + cikti_ondalik2_asal;
+                    end
+                    8'd99: begin // c -> cos
+                        cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
+                    end
+                    8'd107: begin // k -> karekok
+                        cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
+                    end
+                    8'd115: begin // s -> sin
+                        cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
+                    end
+                endcase
+                sayi = 9'd0;
+                durum = 2'b00;
+                temp1 = 8'd0;
+                temp2 = 8'd0;
+                temp3 = 8'd0;
             end
         end
-    end
-    
-    // reg [26:0] one_second_counter; // counter for generating 1 second clock enable
-    // wire one_second_enable;// one second enable for counting numbers
-    reg [15:0] displayed_number; // counting number to be displayed
+    end*/
+
     reg [3:0] LED_BCD;
     reg [19:0] refresh_counter; // 20-bit for creating 10.5ms refresh period or 380Hz refresh rate
     // the first 2 MSB bits for creating 4 LED-activating signals with 2.6ms digit period
-    wire [1:0] LED_activating_counter; 
-    // count     0    ->  1  ->  2  ->  3
-    // activates    LED1    LED2   LED3   LED4
-    // and repeat
-    
-//    always @(posedge clk or posedge reset) begin
-//        if (reset==1)
-//            one_second_counter <= 0;
-//        else begin
-//            if (one_second_counter>=99999999) 
-//                 one_second_counter <= 0;
-//            else
-//                one_second_counter <= one_second_counter + 1;
-//        end
-//    end
-    
-    // assign one_second_enable = (one_second_counter == 99999999) ? 1 : 0;
-    
-    always @(posedge clk or posedge reset) begin
-        if(reset == 1)
-            displayed_number <= 0;
-//        else if(one_second_enable == 1)
-//            displayed_number <= displayed_number + 1;
-    end
+    wire [1:0] LED_activating_counter;
     
     always @(posedge clk or posedge reset) begin 
         if(reset == 1)
@@ -131,7 +227,7 @@ module receiver(
     // anode activating signals for 4 LEDs, digit period of 2.6ms
     // decoder to generate anode signals
     
-    always @(*) begin
+    always @(posedge clk) begin
         case(LED_activating_counter)
         2'b00: begin
             an = 4'b0111; 
@@ -161,7 +257,7 @@ module receiver(
     end
     
     // Cathode patterns of the 7-segment LED display 
-    always @(*) begin
+    always @(posedge clk) begin
         case(LED_BCD)
         4'b0000: seg = 7'b0000001; // "0"     
         4'b0001: seg = 7'b1001111; // "1" 
