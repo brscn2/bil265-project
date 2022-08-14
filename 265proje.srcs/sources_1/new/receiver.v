@@ -6,6 +6,7 @@ module receiver(
     input RxD, //input receving data line
     output reg [3:0] an, // anode signals of the 7-segment LED display
     output reg [6:0] seg, // cathode patterns of the 7-segment LED display
+    output reg dp,
     output [7:0]RxData // output for 8 bits data
     // output [7:0]LED // output 8 LEDs
     );
@@ -233,24 +234,28 @@ module receiver(
             an = 4'b0111; 
             // activate LED1 and Deactivate LED2, LED3, LED4
             LED_BCD = (cikti) / 1000;
+            dp = 1'b1;
             // the first digit of the 16-bit number
               end
         2'b01: begin
             an = 4'b1011; 
             // activate LED2 and Deactivate LED1, LED3, LED4
             LED_BCD = ((cikti) % 1000) / 100;
+            dp = 1'b0;
             // the second digit of the 16-bit number
               end
         2'b10: begin
             an = 4'b1101; 
             // activate LED3 and Deactivate LED2, LED1, LED4
             LED_BCD = (((cikti) % 1000)%100)/10;
+            dp = 1'b1;
             // the third digit of the 16-bit number
                 end
         2'b11: begin
             an = 4'b1110; 
             // activate LED4 and Deactivate LED2, LED3, LED1
             LED_BCD = (((cikti) % 1000)%100)%10;
+            dp = 1'b1;
             // the fourth digit of the 16-bit number    
                end
         endcase

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sun Aug 14 18:10:29 2022
+| Date             : Sun Aug 14 19:12:13 2022
 | Host             : BRSCN running 64-bit major release  (build 9200)
 | Command          : report_power -file receiver_power_routed.rpt -pb receiver_power_summary_routed.pb -rpx receiver_power_routed.rpx
 | Design           : receiver
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.101        |
+| Total On-Chip Power (W)  | 0.102        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.030        |
+| Dynamic (W)              | 0.031        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.006 |     7438 |       --- |             --- |
-|   LUT as Logic |     0.005 |     5523 |     20800 |           26.55 |
+| Clocks         |     0.001 |        3 |       --- |             --- |
+| Slice Logic    |     0.006 |     7439 |       --- |             --- |
+|   LUT as Logic |     0.005 |     5524 |     20800 |           26.56 |
 |   CARRY4       |    <0.001 |     1160 |      8150 |           14.23 |
-|   Register     |    <0.001 |      264 |     41600 |            0.63 |
+|   Register     |    <0.001 |      265 |     41600 |            0.64 |
 |   F7/F8 Muxes  |    <0.001 |       61 |     32600 |            0.19 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     0.006 |     6068 |       --- |             --- |
-| I/O            |     0.017 |       22 |       106 |           20.75 |
+| Signals        |     0.006 |     6069 |       --- |             --- |
+| I/O            |     0.018 |       23 |       106 |           21.70 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.101 |          |           |                 |
+| Total          |     0.102 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -142,7 +142,7 @@ Table of Contents
 +----------+-----------+
 | Name     | Power (W) |
 +----------+-----------+
-| receiver |     0.030 |
+| receiver |     0.031 |
 +----------+-----------+
 
 
