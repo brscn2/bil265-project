@@ -8,7 +8,6 @@ module receiver(
     output reg [6:0] seg, // cathode patterns of the 7-segment LED display
     output reg dp,
     output [7:0]RxData // output for 8 bits data
-    // output [7:0]LED // output 8 LEDs
     );
     
     //internal variables
@@ -29,9 +28,12 @@ module receiver(
     parameter div_bit = 10; // 1 start, 8 data, 1 stop
     
     assign RxData = rxshiftreg [8:1]; // assign the RxData from the shiftregister
+    
     reg [1:0] durum = 2'd0;
     reg [15:0] sayi = 16'd0;
-    reg [7:0] islem_kodu;
+    reg [7:0] islem_kodu = 8'd0;
+    reg [15:0] cikti = 16'd0;
+    reg cikti_isareti_sin_temp, cikti_isareti_cos_temp;
     
     wire cikti_isareti_asal;
     wire [4:0] cikti_tam_asal;
@@ -49,22 +51,17 @@ module receiver(
     wire [4:0] cikti_tam_sin;
     wire [3:0] cikti_ondalik1_sin, cikti_ondalik2_sin;
     
-    reg [15:0] cikti = 16'd1773;
-    
     prime_number_calc a(sayi, cikti_isareti_asal, cikti_tam_asal, cikti_ondalik1_asal, cikti_ondalik2_asal);
     sin_cos_calc c(sayi, 0, cikti_isareti_cos, cikti_tam_cos, cikti_ondalik1_cos, cikti_ondalik2_cos);
     sin_cos_calc s(sayi, 1, cikti_isareti_sin, cikti_tam_sin, cikti_ondalik1_sin, cikti_ondalik2_sin);
     sqrt_calc k(sayi, cikti_isareti_karekok, cikti_tam_karekok, cikti_ondalik1_karekok, cikti_ondalik2_karekok);
-    
-    reg [7:0] temp1 = 8'd0, temp2 = 8'd0, temp3 = 8'd0;
     
     always @(negedge state) begin
         if (durum == 2'b00) begin // rakam girilmek zorunda
             if (RxData >= 8'd48 && RxData <= 8'd57) begin
                 sayi = RxData - 8'd48;
                 durum = 2'b01;
-                temp1 = RxData;
-                cikti = sayi;
+                // cikti = sayi;
             end
         end else if (durum == 2'b01) begin // rakam veya harf girilebilir
             if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin // harf durumu
@@ -75,21 +72,21 @@ module receiver(
                     end
                     8'd99: begin // c -> cos
                         cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
+                        cikti_isareti_cos_temp = cikti_isareti_cos;
                     end
                     8'd107: begin // k -> karekok
                         cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
                     end
                     8'd115: begin // s -> sin
                         cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
+                        cikti_isareti_sin_temp = cikti_isareti_sin;
                     end
                 endcase
                 durum = 2'b00;
-                sayi = 8'd0;
             end else if (RxData >= 8'd48 && RxData <= 8'd57) begin // rakam durumu
                 sayi = sayi*10 + RxData - 8'd48;
                 durum = 2'b10;
-                temp1 = RxData;
-                cikti = sayi;
+                // cikti = sayi;
             end
         end else if (durum == 2'b10) begin // rakam veya harf girilebilir
             if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin // harf durumu
@@ -100,21 +97,21 @@ module receiver(
                     end
                     8'd99: begin // c -> cos
                         cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
+                        cikti_isareti_cos_temp = cikti_isareti_cos;
                     end
                     8'd107: begin // k -> karekok
                         cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
                     end
                     8'd115: begin // s -> sin
                         cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
+                        cikti_isareti_sin_temp = cikti_isareti_sin;
                     end
                 endcase
                 durum = 2'b00;
-                sayi = 8'd0;
             end else if (RxData >= 8'd48 && RxData <= 8'd57) begin // rakam durumu
                 sayi = sayi*10 + RxData - 8'd48;
                 durum = 2'b11;
-                temp1 = RxData;
-                cikti = sayi;
+                // cikti = sayi;
             end
         end else if (durum == 2'b11) begin // harf girilmek zorunda
             if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin // harf durumu
@@ -125,92 +122,20 @@ module receiver(
                     end
                     8'd99: begin // c -> cos
                         cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
+                        cikti_isareti_cos_temp = cikti_isareti_cos;
                     end
                     8'd107: begin // k -> karekok
                         cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
                     end
                     8'd115: begin // s -> sin
                         cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
+                        cikti_isareti_sin_temp = cikti_isareti_sin;
                     end
                 endcase
                 durum = 2'b00;
-                sayi = 8'd0;
             end
         end
     end
-    
-    
-    
-    /*always @(RxData) begin
-        if (durum == 2'b00) begin
-            if(RxData <= 8'd57 && RxData >= 8'd48) begin
-                sayi = RxData - 6'd48;
-                durum = 2'b01;
-                temp1 = RxData;
-                cikti = RxData - 6'd48;
-            end
-        end else if (durum == 2'b01) begin
-            if (temp1 != RxData)
-                temp2 = RxData;
-            if (temp2 <= 8'd57 && temp2 >= 8'd48) begin
-                sayi = sayi*10 + temp2 - 6'd48;
-                durum = 2'b10;
-                cikti = cikti*10 + temp2 - 6'd48;
-            end else if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin
-                islem_kodu = RxData;
-                case (islem_kodu)
-                    8'd97: begin // a -> asal_sayi
-                        cikti = cikti_tam_asal * 100 + cikti_ondalik1_asal * 10 + cikti_ondalik2_asal;
-                    end
-                    8'd99: begin // c -> cos
-                        cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
-                    end
-                    8'd107: begin // k -> karekok
-                        cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
-                    end
-                    8'd115: begin // s -> sin
-                        cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
-                    end
-                endcase
-                sayi = 9'd0;
-                durum = 2'b00;
-                temp1 = 8'd0;
-                temp2 = 8'd0;
-                temp3 = 8'd0;
-            end
-        end else if (durum == 2'b10) begin
-            if (temp2 != RxData)
-                temp3 = RxData;
-            if(temp3 <= 8'd57 && temp3 >= 8'd48) begin
-                sayi = sayi*10 + temp3 - 6'd48;
-                durum = 2'b10;
-                cikti = cikti*10 + temp3 - 6'd48;
-                temp2 = RxData;
-                temp3 = 8'd0;
-            end else if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin
-                islem_kodu = RxData;
-                case (islem_kodu)
-                    8'd97: begin // a -> asal_sayi
-                        cikti = cikti_tam_asal * 100 + cikti_ondalik1_asal * 10 + cikti_ondalik2_asal;
-                    end
-                    8'd99: begin // c -> cos
-                        cikti = cikti_tam_cos * 100 + cikti_ondalik1_cos * 10 + cikti_ondalik2_cos;
-                    end
-                    8'd107: begin // k -> karekok
-                        cikti = cikti_tam_karekok * 100 + cikti_ondalik1_karekok * 10 + cikti_ondalik2_karekok;
-                    end
-                    8'd115: begin // s -> sin
-                        cikti = cikti_tam_sin * 100 + cikti_ondalik1_sin * 10 + cikti_ondalik2_sin;
-                    end
-                endcase
-                sayi = 9'd0;
-                durum = 2'b00;
-                temp1 = 8'd0;
-                temp2 = 8'd0;
-                temp3 = 8'd0;
-            end
-        end
-    end*/
 
     reg [3:0] LED_BCD;
     reg [19:0] refresh_counter; // 20-bit for creating 10.5ms refresh period or 380Hz refresh rate
@@ -234,29 +159,33 @@ module receiver(
             an = 4'b0111; 
             // activate LED1 and Deactivate LED2, LED3, LED4
             LED_BCD = (cikti) / 1000;
-            dp = 1'b1;
             // the first digit of the 16-bit number
+            if (cikti_isareti_sin_temp == 1'b1 && islem_kodu == 8'd115)
+                LED_BCD = 4'd10;
+            else if (cikti_isareti_cos_temp == 1'b1 && islem_kodu == 8'd99)
+                LED_BCD = 4'd10;
+            dp = 1'b1;
               end
         2'b01: begin
             an = 4'b1011; 
             // activate LED2 and Deactivate LED1, LED3, LED4
             LED_BCD = ((cikti) % 1000) / 100;
-            dp = 1'b0;
             // the second digit of the 16-bit number
+            dp = 1'b0;
               end
         2'b10: begin
             an = 4'b1101; 
             // activate LED3 and Deactivate LED2, LED1, LED4
             LED_BCD = (((cikti) % 1000)%100)/10;
-            dp = 1'b1;
             // the third digit of the 16-bit number
+            dp = 1'b1;
                 end
         2'b11: begin
             an = 4'b1110; 
             // activate LED4 and Deactivate LED2, LED3, LED1
             LED_BCD = (((cikti) % 1000)%100)%10;
+            // the fourth digit of the 16-bit number   
             dp = 1'b1;
-            // the fourth digit of the 16-bit number    
                end
         endcase
     end
@@ -273,7 +202,8 @@ module receiver(
         4'b0110: seg = 7'b0100000; // "6" 
         4'b0111: seg = 7'b0001111; // "7" 
         4'b1000: seg = 7'b0000000; // "8"     
-        4'b1001: seg = 7'b0000100; // "9" 
+        4'b1001: seg = 7'b0000100; // "9"
+        4'b1010: seg = 7'b1111110; // "-"
         default: seg = 7'b0000001; // "0"
         endcase
     end

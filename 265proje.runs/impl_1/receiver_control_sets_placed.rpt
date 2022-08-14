@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun Aug 14 19:11:17 2022
-| Host         : BRSCN running 64-bit major release  (build 9200)
+| Date         : Sun Aug 14 23:27:45 2022
+| Host         : tolgaizdas-cs running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file receiver_control_sets_placed.rpt
 | Design       : receiver
 | Device       : xc7a35t
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |    15 |
-| Unused register locations in slices containing registers |    63 |
+| Unused register locations in slices containing registers |    74 |
 +----------------------------------------------------------+-------+
 
 
@@ -37,8 +37,7 @@ Table of Contents
 |      1 |            3 |
 |      2 |            2 |
 |      3 |            1 |
-|      4 |            1 |
-|      5 |            1 |
+|      4 |            2 |
 |     14 |            1 |
 |    16+ |            6 |
 +--------+--------------+
@@ -50,10 +49,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              45 |           23 |
+| No           | No                    | No                     |              52 |           26 |
 | No           | No                    | Yes                    |              20 |            5 |
-| No           | Yes                   | No                     |              27 |           11 |
-| Yes          | No                    | No                     |             169 |           85 |
+| No           | Yes                   | No                     |              24 |           11 |
+| Yes          | No                    | No                     |             170 |           89 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               4 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -62,24 +61,24 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------+-------------------+------------------------------------+------------------+----------------+
-|             Clock Signal            |   Enable Signal   |          Set/Reset Signal          | Slice Load Count | Bel Load Count |
-+-------------------------------------+-------------------+------------------------------------+------------------+----------------+
-|  k/sonuc_ondalik1_reg[0]_i_2__1_n_0 |                   | k/sonuc_ondalik1_reg[0]_i_3__1_n_0 |                1 |              1 |
-|  k/sonuc_ondalik2_reg[3]_i_2__1_n_0 |                   | k/sonuc_ondalik1_reg[0]_i_3__1_n_0 |                1 |              1 |
-|  k/sonuc_ondalik2_reg[3]_i_2__1_n_0 |                   | k/sonuc_ondalik2_reg[2]_i_2__1_n_0 |                1 |              1 |
-|  k/sonuc_ondalik2_reg[3]_i_2__1_n_0 |                   | k/sonuc_ondalik2_reg[1]_i_2__1_n_0 |                2 |              2 |
-| ~state_BUFG                         |                   |                                    |                1 |              2 |
-|  k/sonuc_ondalik1_reg[3]_i_2__1_n_0 |                   | k/sonuc_ondalik1_reg[3]_i_3__0_n_0 |                1 |              3 |
-|  clk_IBUF_BUFG                      | sel               | bitcounter[3]_i_1_n_0              |                1 |              4 |
-|  clk_IBUF_BUFG                      |                   | LED_BCD[3]                         |                1 |              5 |
-|  clk_IBUF_BUFG                      |                   | clear                              |                4 |             14 |
-| ~state_BUFG                         | cikti[15]_i_1_n_0 |                                    |                8 |             16 |
-|  clk_IBUF_BUFG                      | CEB2              |                                    |                8 |             17 |
-|  clk_IBUF_BUFG                      |                   |                                    |                9 |             20 |
-|  clk_IBUF_BUFG                      |                   | reset_IBUF                         |                5 |             20 |
-|  s/E[0]                             |                   |                                    |               13 |             23 |
-| ~state_BUFG                         | sayi[14]_i_1_n_0  |                                    |               69 |            136 |
-+-------------------------------------+-------------------+------------------------------------+------------------+----------------+
++-------------------------------------+-----------------------+------------------------------------+------------------+----------------+
+|             Clock Signal            |     Enable Signal     |          Set/Reset Signal          | Slice Load Count | Bel Load Count |
++-------------------------------------+-----------------------+------------------------------------+------------------+----------------+
+|  k/sayi_reg[8]_rep__4               |                       | k/sonuc_ondalik1_reg[0]_i_3__1_n_0 |                1 |              1 |
+|  k/sayi_reg[8]_rep__4               |                       | k/sonuc_ondalik2_reg[2]_i_2__1_n_0 |                1 |              1 |
+|  k/sonuc_ondalik1_reg[0]_i_2__1_n_0 |                       | k/sonuc_ondalik1_reg[0]_i_3__1_n_0 |                1 |              1 |
+|  k/sayi_reg[8]_rep__4               |                       | k/sonuc_ondalik2_reg[1]_i_2__1_n_0 |                1 |              2 |
+|  k/sayi_reg[8]_rep__4               |                       | c/sayi_reg[0]                      |                1 |              2 |
+|  k/sonuc_ondalik1_reg[3]_i_2__1_n_0 |                       | k/sonuc_ondalik1_reg[3]_i_3__0_n_0 |                2 |              3 |
+| ~state_BUFG                         |                       |                                    |                2 |              4 |
+|  clk_IBUF_BUFG                      | sel                   | bitcounter[3]_i_1_n_0              |                1 |              4 |
+|  clk_IBUF_BUFG                      |                       | clear                              |                4 |             14 |
+|  clk_IBUF_BUFG                      | CEB2                  |                                    |               10 |             17 |
+|  clk_IBUF_BUFG                      |                       | reset_IBUF                         |                5 |             20 |
+| ~state_BUFG                         | islem_kodu[7]_i_1_n_0 |                                    |                9 |             22 |
+|  s/E[0]                             |                       |                                    |               14 |             23 |
+|  clk_IBUF_BUFG                      |                       |                                    |               10 |             25 |
+| ~state_BUFG                         | sayi[8]_i_1_n_0       |                                    |               70 |            131 |
++-------------------------------------+-----------------------+------------------------------------+------------------+----------------+
 
 

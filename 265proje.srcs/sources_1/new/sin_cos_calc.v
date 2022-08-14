@@ -1601,8 +1601,8 @@ module sin_cos_calc(
         end else begin
             sonuc_isareti = 1;
             sonuc_tam = 0;
-            sonuc_ondalik1 = 4;
-            sonuc_ondalik2 = 9;
+            sonuc_ondalik1 = 5;
+            sonuc_ondalik2 = 0;
         end
     end
     if (sayi == 121) begin
