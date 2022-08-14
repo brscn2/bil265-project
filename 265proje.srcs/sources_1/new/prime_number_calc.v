@@ -22,19 +22,25 @@
 
 module prime_number_calc(
         input [8:0] sayi,
-        output reg [4:0] cikti
+        output reg sonuc_isareti,
+        output reg [4:0] sonuc_tam,
+        output reg [3:0] sonuc_ondalik1, sonuc_ondalik2
     );
     
     integer i;
     
     always @(*) begin
-        cikti = 1;
+        sonuc_tam = 1;
         for (i = 2; i < sayi; i = i + 1) begin
             if (sayi % i == 0) begin
-                cikti = 0;
+                sonuc_tam = 0;
             end
         end
         if (sayi == 1 || sayi == 0)
-            cikti = 0;
+            sonuc_tam = 0;
+            
+        sonuc_ondalik1 = 0;
+        sonuc_ondalik2 = 0;
+        sonuc_isareti = 0;
     end
 endmodule

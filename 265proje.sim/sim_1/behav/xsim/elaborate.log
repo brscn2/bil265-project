@@ -1,0 +1,8 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 7825ae046f954f79ad9d668280484227 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sc_tb_behav xil_defaultlib.sc_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3633] port 'angle_in' is already connected [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sim_1/new/sc_tb.v:32]
+ERROR: [VRFC 10-3633] port 'angle_in' is already connected [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sim_1/new/sc_tb.v:37]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
