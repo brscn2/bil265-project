@@ -29,7 +29,7 @@ module receiver(
     
     assign RxData = rxshiftreg [8:1]; // assign the RxData from the shiftregister
     reg [1:0] durum = 2'd0;
-    reg [15:0] sayi = 9'd0;
+    reg [15:0] sayi = 16'd0;
     reg [7:0] islem_kodu;
     
     wire cikti_isareti_asal;
@@ -48,16 +48,16 @@ module receiver(
     wire [4:0] cikti_tam_sin;
     wire [3:0] cikti_ondalik1_sin, cikti_ondalik2_sin;
     
-    reg [15:0] cikti = 14'd1770;
+    reg [15:0] cikti = 16'd1773;
     
     prime_number_calc a(sayi, cikti_isareti_asal, cikti_tam_asal, cikti_ondalik1_asal, cikti_ondalik2_asal);
     sin_cos_calc c(sayi, 0, cikti_isareti_cos, cikti_tam_cos, cikti_ondalik1_cos, cikti_ondalik2_cos);
     sin_cos_calc s(sayi, 1, cikti_isareti_sin, cikti_tam_sin, cikti_ondalik1_sin, cikti_ondalik2_sin);
     sqrt_calc k(sayi, cikti_isareti_karekok, cikti_tam_karekok, cikti_ondalik1_karekok, cikti_ondalik2_karekok);
     
-    reg [7:0] temp1 = 8'd0;
+    reg [7:0] temp1 = 8'd0, temp2 = 8'd0, temp3 = 8'd0;
     
-    always @(posedge clk) begin
+    always @(negedge state) begin
         if (durum == 2'b00) begin // rakam girilmek zorunda
             if (RxData >= 8'd48 && RxData <= 8'd57) begin
                 sayi = RxData - 8'd48;
@@ -66,7 +66,7 @@ module receiver(
                 cikti = sayi;
             end
         end else if (durum == 2'b01) begin // rakam veya harf girilebilir
-            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115 && RxData != temp1) begin // harf durumu
+            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin // harf durumu
                 islem_kodu = RxData;
                 case (islem_kodu)
                     8'd97: begin // a -> asal_sayi
@@ -84,14 +84,14 @@ module receiver(
                 endcase
                 durum = 2'b00;
                 sayi = 8'd0;
-            end else if (RxData >= 8'd48 && RxData <= 8'd57 && RxData != temp1) begin // rakam durumu
+            end else if (RxData >= 8'd48 && RxData <= 8'd57) begin // rakam durumu
                 sayi = sayi*10 + RxData - 8'd48;
                 durum = 2'b10;
                 temp1 = RxData;
                 cikti = sayi;
             end
         end else if (durum == 2'b10) begin // rakam veya harf girilebilir
-            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115 && RxData != temp1) begin // harf durumu
+            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin // harf durumu
                 islem_kodu = RxData;
                 case (islem_kodu)
                     8'd97: begin // a -> asal_sayi
@@ -109,14 +109,14 @@ module receiver(
                 endcase
                 durum = 2'b00;
                 sayi = 8'd0;
-            end else if (RxData >= 8'd48 && RxData <= 8'd57 && RxData != temp1) begin // rakam durumu
+            end else if (RxData >= 8'd48 && RxData <= 8'd57) begin // rakam durumu
                 sayi = sayi*10 + RxData - 8'd48;
                 durum = 2'b11;
                 temp1 = RxData;
                 cikti = sayi;
             end
         end else if (durum == 2'b11) begin // harf girilmek zorunda
-            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115 && RxData != temp1) begin // harf durumu
+            if (RxData == 8'd97 || RxData == 8'd99 || RxData == 8'd107 || RxData== 8'd115) begin // harf durumu
                 islem_kodu = RxData;
                 case (islem_kodu)
                     8'd97: begin // a -> asal_sayi

@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date                      : Sun Aug 14 04:30:16 2022
-| Host                      : tolgaizdas-cs running 64-bit major release  (build 9200)
+| Date                      : Sun Aug 14 18:09:32 2022
+| Host                      : BRSCN running 64-bit major release  (build 9200)
 | Command                   : report_io -file receiver_io_placed.rpt
 | Design                    : receiver
 | Device                    : xc7a35t

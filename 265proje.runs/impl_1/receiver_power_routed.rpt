@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sun Aug 14 04:31:27 2022
-| Host             : tolgaizdas-cs running 64-bit major release  (build 9200)
+| Date             : Sun Aug 14 18:10:29 2022
+| Host             : BRSCN running 64-bit major release  (build 9200)
 | Command          : report_power -file receiver_power_routed.rpt -pb receiver_power_summary_routed.pb -rpx receiver_power_routed.rpx
 | Design           : receiver
 | Device           : xc7a35tcpg236-1
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.103        |
+| Total On-Chip Power (W)  | 0.101        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.031        |
+| Dynamic (W)              | 0.030        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
 | Junction Temperature (C) | 25.5         |
-| Confidence Level         | Medium       |
+| Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -52,17 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |     6345 |       --- |             --- |
-|   LUT as Logic |     0.004 |     4566 |     20800 |           21.95 |
-|   CARRY4       |     0.001 |     1159 |      8150 |           14.22 |
-|   Register     |    <0.001 |      282 |     41600 |            0.68 |
-|   F7/F8 Muxes  |    <0.001 |       59 |     32600 |            0.18 |
+| Clocks         |    <0.001 |        3 |       --- |             --- |
+| Slice Logic    |     0.006 |     7438 |       --- |             --- |
+|   LUT as Logic |     0.005 |     5523 |     20800 |           26.55 |
+|   CARRY4       |    <0.001 |     1160 |      8150 |           14.23 |
+|   Register     |    <0.001 |      264 |     41600 |            0.63 |
+|   F7/F8 Muxes  |    <0.001 |       61 |     32600 |            0.19 |
+|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     0.007 |     4978 |       --- |             --- |
+| Signals        |     0.006 |     6068 |       --- |             --- |
 | I/O            |     0.017 |       22 |       106 |           20.75 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.103 |          |           |                 |
+| Total          |     0.101 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.024 |       0.014 |      0.010 |
+| Vccint    |       1.000 |     0.022 |       0.013 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
 | Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -95,12 +96,12 @@ Table of Contents
 | User Input Data             | Confidence | Details                                               | Action                                                                                                             |
 +-----------------------------+------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | Design implementation state | High       | Design is routed                                      |                                                                                                                    |
-| Clock nodes activity        | Medium     | More than 5% of clocks are missing user specification | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
 | I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
 | Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
 | Device models               | High       | Device models are Production                          |                                                                                                                    |
 |                             |            |                                                       |                                                                                                                    |
-| Overall confidence level    | Medium     |                                                       |                                                                                                                    |
+| Overall confidence level    | Low        |                                                       |                                                                                                                    |
 +-----------------------------+------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 
@@ -141,7 +142,7 @@ Table of Contents
 +----------+-----------+
 | Name     | Power (W) |
 +----------+-----------+
-| receiver |     0.031 |
+| receiver |     0.030 |
 +----------+-----------+
 
 
