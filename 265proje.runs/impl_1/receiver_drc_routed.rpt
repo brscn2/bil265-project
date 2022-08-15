@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun Aug 14 19:12:07 2022
+| Date         : Mon Aug 15 13:07:28 2022
 | Host         : BRSCN running 64-bit major release  (build 9200)
 | Command      : report_drc -file receiver_drc_routed.rpt -pb receiver_drc_routed.pb -rpx receiver_drc_routed.rpx
 | Design       : receiver
@@ -35,17 +35,17 @@ Table of Contents
 -----------------
 PDRC-153#1 Warning
 Gated clock check  
-Net k/sonuc_ondalik1_reg[0]_i_2__1_n_0 is a gated clock net sourced by a combinational pin k/sonuc_ondalik1_reg[0]_i_2__1/O, cell k/sonuc_ondalik1_reg[0]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net k/sayi_reg[8]_rep__4 is a gated clock net sourced by a combinational pin k/sonuc_isareti_reg_i_2/O, cell k/sonuc_isareti_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net k/sonuc_ondalik1_reg[3]_i_2__1_n_0 is a gated clock net sourced by a combinational pin k/sonuc_ondalik1_reg[3]_i_2__1/O, cell k/sonuc_ondalik1_reg[3]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net k/sonuc_ondalik1_reg[0]_i_2__1_n_0 is a gated clock net sourced by a combinational pin k/sonuc_ondalik1_reg[0]_i_2__1/O, cell k/sonuc_ondalik1_reg[0]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net k/sonuc_ondalik2_reg[3]_i_2__1_n_0 is a gated clock net sourced by a combinational pin k/sonuc_ondalik2_reg[3]_i_2__1/O, cell k/sonuc_ondalik2_reg[3]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net k/sonuc_ondalik1_reg[3]_i_2__1_n_0 is a gated clock net sourced by a combinational pin k/sonuc_ondalik1_reg[3]_i_2__1/O, cell k/sonuc_ondalik1_reg[3]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
