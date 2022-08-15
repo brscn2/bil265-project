@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sun Aug 14 23:28:38 2022
-| Host             : tolgaizdas-cs running 64-bit major release  (build 9200)
+| Date             : Mon Aug 15 13:07:31 2022
+| Host             : BRSCN running 64-bit major release  (build 9200)
 | Command          : report_power -file receiver_power_routed.rpt -pb receiver_power_summary_routed.pb -rpx receiver_power_routed.rpx
 | Design           : receiver
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.102        |
+| Total On-Chip Power (W)  | 0.101        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.030        |
+| Dynamic (W)              | 0.029        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |     7400 |       --- |             --- |
-|   LUT as Logic |     0.004 |     5479 |     20800 |           26.34 |
+| Clocks         |     0.001 |        3 |       --- |             --- |
+| Slice Logic    |     0.005 |     7392 |       --- |             --- |
+|   LUT as Logic |     0.004 |     5481 |     20800 |           26.35 |
 |   CARRY4       |    <0.001 |     1154 |      8150 |           14.16 |
-|   Register     |    <0.001 |      270 |     41600 |            0.65 |
+|   Register     |    <0.001 |      262 |     41600 |            0.63 |
 |   F7/F8 Muxes  |    <0.001 |       61 |     32600 |            0.19 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     0.005 |     6027 |       --- |             --- |
-| I/O            |     0.018 |       23 |       106 |           21.70 |
+| Signals        |     0.005 |     6017 |       --- |             --- |
+| I/O            |     0.017 |       15 |       106 |           14.15 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.102 |          |           |                 |
+| Total          |     0.101 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.022 |       0.012 |      0.010 |
+| Vccint    |       1.000 |     0.021 |       0.012 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
 | Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,7 +142,7 @@ Table of Contents
 +----------+-----------+
 | Name     | Power (W) |
 +----------+-----------+
-| receiver |     0.030 |
+| receiver |     0.029 |
 +----------+-----------+
 
 

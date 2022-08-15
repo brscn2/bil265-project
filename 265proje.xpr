@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="C:/Users/tolga/Desktop/bil265-project/265proje.xpr">
+<Project Version="7" Minor="39" Path="C:/Users/brscn/Desktop/bil265-project/265proje.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="7825ae046f954f79ad9d668280484227"/>

@@ -2,12 +2,12 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sun Aug 14 23:23:18 2022
-# Process ID: 11648
-# Current directory: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1
+# Start of session at: Mon Aug 15 13:04:48 2022
+# Process ID: 11576
+# Current directory: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1
 # Command line: vivado.exe -log receiver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source receiver.tcl
-# Log file: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/receiver.vds
-# Journal file: C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1\vivado.jou
+# Log file: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/receiver.vds
+# Journal file: C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source receiver.tcl -notrace
 Command: synth_design -top receiver -part xc7a35tcpg236-1
@@ -15,34 +15,34 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7496 
+INFO: Helper process launched with PID 12060 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 363.527 ; gain = 103.355
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 364.047 ; gain = 102.641
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'receiver' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:3]
+INFO: [Synth 8-6157] synthesizing module 'receiver' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:3]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter baud_rate bound to: 9600 - type: integer 
 	Parameter div_sample bound to: 4 - type: integer 
 	Parameter div_counter bound to: 2604 - type: integer 
 	Parameter mid_sample bound to: 2 - type: integer 
 	Parameter div_bit bound to: 10 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'prime_number_calc' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/prime_number_calc.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'prime_number_calc' (1#1) [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/prime_number_calc.v:23]
-WARNING: [Synth 8-689] width (16) of port connection 'sayi' does not match port width (9) of module 'prime_number_calc' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:54]
-INFO: [Synth 8-6157] synthesizing module 'sin_cos_calc' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'sin_cos_calc' (2#1) [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:23]
-WARNING: [Synth 8-689] width (16) of port connection 'sayi' does not match port width (9) of module 'sin_cos_calc' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:55]
-WARNING: [Synth 8-689] width (16) of port connection 'sayi' does not match port width (9) of module 'sin_cos_calc' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:56]
-INFO: [Synth 8-6157] synthesizing module 'sqrt_calc' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'sqrt_calc' (3#1) [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:23]
-WARNING: [Synth 8-689] width (16) of port connection 'sayi' does not match port width (9) of module 'sqrt_calc' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:57]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:69]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:94]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:119]
-INFO: [Synth 8-226] default block is never used [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:240]
-INFO: [Synth 8-6155] done synthesizing module 'receiver' (4#1) [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:3]
+INFO: [Synth 8-6157] synthesizing module 'prime_number_calc' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/prime_number_calc.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'prime_number_calc' (1#1) [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/prime_number_calc.v:23]
+WARNING: [Synth 8-689] width (16) of port connection 'sayi' does not match port width (9) of module 'prime_number_calc' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:55]
+INFO: [Synth 8-6157] synthesizing module 'sin_cos_calc' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'sin_cos_calc' (2#1) [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:23]
+WARNING: [Synth 8-689] width (16) of port connection 'sayi' does not match port width (9) of module 'sin_cos_calc' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:56]
+WARNING: [Synth 8-689] width (16) of port connection 'sayi' does not match port width (9) of module 'sin_cos_calc' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:57]
+INFO: [Synth 8-6157] synthesizing module 'sqrt_calc' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'sqrt_calc' (3#1) [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:23]
+WARNING: [Synth 8-689] width (16) of port connection 'sayi' does not match port width (9) of module 'sqrt_calc' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:58]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:70]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:95]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:120]
+INFO: [Synth 8-226] default block is never used [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:241]
+INFO: [Synth 8-6155] done synthesizing module 'receiver' (4#1) [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 626.098 ; gain = 365.926
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 626.906 ; gain = 365.500
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -55,44 +55,92 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 626.098 ; gain = 365.926
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 626.906 ; gain = 365.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 626.098 ; gain = 365.926
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 626.906 ; gain = 365.500
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc]
-Finished Parsing XDC File [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/receiver_propImpl.xdc].
+Parsing XDC File [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'RxData[0]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[0]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[1]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[1]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[2]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[2]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[3]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[3]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[4]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[4]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[5]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[5]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[6]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[6]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[7]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RxData[7]'. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/constrs_1/new/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/receiver_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/receiver_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 881.801 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 881.129 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 881.883 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 881.145 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 881.883 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 881.883 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 881.203 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 881.203 ; gain = 0.059
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 882.039 ; gain = 621.867
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 881.203 ; gain = 619.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 882.039 ; gain = 621.867
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 881.203 ; gain = 619.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 882.039 ; gain = 621.867
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 881.203 ; gain = 619.797
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "sonuc_tam" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "sonuc_tam" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -111,16 +159,16 @@ INFO: [Synth 8-5546] ROM "cikti_isareti_sin_temp" won't be mapped to RAM because
 INFO: [Synth 8-5544] ROM "shift" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "inc_bitcounter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-WARNING: [Synth 8-327] inferring latch for variable 'sonuc_isareti_reg' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:37]
-WARNING: [Synth 8-327] inferring latch for variable 'sonuc_tam_reg' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:38]
-WARNING: [Synth 8-327] inferring latch for variable 'sonuc_ondalik1_reg' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:39]
-WARNING: [Synth 8-327] inferring latch for variable 'sonuc_ondalik2_reg' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:40]
-WARNING: [Synth 8-327] inferring latch for variable 'sonuc_isareti_reg' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:35]
-WARNING: [Synth 8-327] inferring latch for variable 'sonuc_tam_reg' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:36]
-WARNING: [Synth 8-327] inferring latch for variable 'sonuc_ondalik1_reg' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:37]
-WARNING: [Synth 8-327] inferring latch for variable 'sonuc_ondalik2_reg' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'sonuc_isareti_reg' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:37]
+WARNING: [Synth 8-327] inferring latch for variable 'sonuc_tam_reg' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'sonuc_ondalik1_reg' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'sonuc_ondalik2_reg' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sin_cos_calc.v:40]
+WARNING: [Synth 8-327] inferring latch for variable 'sonuc_isareti_reg' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:35]
+WARNING: [Synth 8-327] inferring latch for variable 'sonuc_tam_reg' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:36]
+WARNING: [Synth 8-327] inferring latch for variable 'sonuc_ondalik1_reg' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:37]
+WARNING: [Synth 8-327] inferring latch for variable 'sonuc_ondalik2_reg' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/sqrt_calc.v:38]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:04 ; elapsed = 00:01:06 . Memory (MB): peak = 882.039 ; gain = 621.867
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 881.203 ; gain = 619.797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -259,7 +307,7 @@ INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'sayi_reg[15:0]' into 'sayi_reg[15:0]' [C:/Users/tolga/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:54]
+INFO: [Synth 8-4471] merging register 'sayi_reg[15:0]' into 'sayi_reg[15:0]' [C:/Users/brscn/Desktop/bil265-project/265proje.srcs/sources_1/new/receiver.v:55]
 INFO: [Synth 8-5544] ROM "shift" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "cikti_isareti_cos_temp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cikti" won't be mapped to RAM because it is too sparse
@@ -312,7 +360,7 @@ INFO: [Synth 8-5545] ROM "sonuc_tam" won't be mapped to RAM because address size
 INFO: [Synth 8-5545] ROM "sonuc_tam" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "sonuc_tam" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:29 ; elapsed = 00:02:49 . Memory (MB): peak = 882.039 ; gain = 621.867
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:19 . Memory (MB): peak = 881.203 ; gain = 619.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -356,13 +404,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:40 ; elapsed = 00:03:00 . Memory (MB): peak = 882.039 ; gain = 621.867
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:14 ; elapsed = 00:01:25 . Memory (MB): peak = 881.203 ; gain = 619.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:42 ; elapsed = 00:03:02 . Memory (MB): peak = 882.039 ; gain = 621.867
+Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:26 . Memory (MB): peak = 881.203 ; gain = 619.797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -384,7 +432,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:46 ; elapsed = 00:03:06 . Memory (MB): peak = 973.891 ; gain = 713.719
+Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:28 . Memory (MB): peak = 972.930 ; gain = 711.523
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -408,7 +456,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:49 ; elapsed = 00:03:09 . Memory (MB): peak = 973.891 ; gain = 713.719
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:29 . Memory (MB): peak = 972.930 ; gain = 711.523
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -421,7 +469,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:49 ; elapsed = 00:03:10 . Memory (MB): peak = 973.891 ; gain = 713.719
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:29 . Memory (MB): peak = 972.930 ; gain = 711.523
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -433,25 +481,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:50 ; elapsed = 00:03:10 . Memory (MB): peak = 973.891 ; gain = 713.719
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:29 . Memory (MB): peak = 972.930 ; gain = 711.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:50 ; elapsed = 00:03:10 . Memory (MB): peak = 973.891 ; gain = 713.719
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:29 . Memory (MB): peak = 972.930 ; gain = 711.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:50 ; elapsed = 00:03:10 . Memory (MB): peak = 973.891 ; gain = 713.719
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:30 . Memory (MB): peak = 972.930 ; gain = 711.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:50 ; elapsed = 00:03:10 . Memory (MB): peak = 973.891 ; gain = 713.719
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:30 . Memory (MB): peak = 972.930 ; gain = 711.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -482,31 +530,31 @@ Report Cell Usage:
 |13    |LDC    |     5|
 |14    |LDP    |     5|
 |15    |IBUF   |     3|
-|16    |OBUF   |    20|
+|16    |OBUF   |    12|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------+---------------+------+
 |      |Instance |Module         |Cells |
 +------+---------+---------------+------+
-|1     |top      |               |  7401|
+|1     |top      |               |  7393|
 |2     |  c      |sin_cos_calc   |   114|
 |3     |  k      |sqrt_calc      |   152|
 |4     |  s      |sin_cos_calc_0 |   116|
 +------+---------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:50 ; elapsed = 00:03:10 . Memory (MB): peak = 973.891 ; gain = 713.719
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:30 . Memory (MB): peak = 972.930 ; gain = 711.523
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:14 ; elapsed = 00:03:00 . Memory (MB): peak = 973.891 ; gain = 457.777
-Synthesis Optimization Complete : Time (s): cpu = 00:02:50 ; elapsed = 00:03:11 . Memory (MB): peak = 973.891 ; gain = 713.719
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:23 . Memory (MB): peak = 972.930 ; gain = 457.227
+Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:30 . Memory (MB): peak = 972.930 ; gain = 711.523
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1248 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'receiver' is not ideal for floorplanning, since the cellview 'receiver' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 973.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 972.930 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 33 instances were transformed.
   LD => LDCE: 23 instances
@@ -514,12 +562,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDP => LDPE: 5 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-87 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
+87 Infos, 36 Warnings, 16 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:54 ; elapsed = 00:03:16 . Memory (MB): peak = 973.891 ; gain = 723.371
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 973.891 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:21 ; elapsed = 00:01:33 . Memory (MB): peak = 972.930 ; gain = 719.934
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 972.930 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/tolga/Desktop/bil265-project/265proje.runs/synth_1/receiver.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/brscn/Desktop/bil265-project/265proje.runs/synth_1/receiver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file receiver_utilization_synth.rpt -pb receiver_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Aug 14 23:26:38 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 15 13:06:24 2022...

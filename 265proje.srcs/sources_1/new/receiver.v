@@ -6,11 +6,12 @@ module receiver(
     input RxD, //input receving data line
     output reg [3:0] an, // anode signals of the 7-segment LED display
     output reg [6:0] seg, // cathode patterns of the 7-segment LED display
-    output reg dp,
-    output [7:0]RxData // output for 8 bits data
+    output reg dp
+    //output [7:0]RxData // output for 8 bits data
     );
     
     //internal variables
+    wire [7:0] RxData;
     reg shift; // shift signal to trigger shifting data
     reg state, nextstate; // initial state and next state variable
     reg [3:0] bitcounter; // 4 bits counter to count up to 9 for UART receiving
